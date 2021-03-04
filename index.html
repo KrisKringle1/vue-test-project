@@ -10,36 +10,21 @@
 </head>
 <body>
     <div id="root">
+        <h4>v-model</h4>
+        <textarea name="example" id="example" cols="30" rows="10" v-model="message"></textarea>
+
+        <p>
+            {{message}}
+        </p>
         <div>
-            <h4>v-if</h4>
-            
-            <div v-if="ifBoolean">
-                show inforemation if the boolean is true
-            </div>
+            <h4>v-on</h4>
 
-            <div v-else="ifBoolean">
-                this is where v - else data when the boolean is false 
-            </div>
+            <button v-on:click="counter += 1">Add</button>
+            <button v-on:click="counter -= 1">Subtract</button>
+
+            <h4>{{counter}}</h4>
+      
         </div>
-
-        <div>
-           <h4>v-show</h4> 
-
-           <div v-show="showBoolean">
-               show information if show boolean is true
-           </div>
-        </div>
-
-        <div>
-            <h4>v-for</h4>
-            <ul>
-                <li v-for="fruit in fruits">
-                    {{fruit}}
-                </li>
-            </ul>
-        </div>
-
-
 
     </div>
     <script src="app.js"></script>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="root">
+        <div class="container">
+            <div class="button-container">
+                <h4>Sort Stores By</h4>
+                <button 
+                class="btn btn-primary"
+                @click="sortName"
+                >
+                    Store Name
+                </button>
+                <button
+                class="btn btn-secondary"
+                @click="sortLowest"
+                >
+                Lowest Stars
+                </button>
+                <button 
+                class="btn btn-warning"
+                @click="sortHighest"
+                >
+                Highest Stars
+                </button>
+            </div>
+            <div>
+                <h4>Search Stores</h4>
+                <input type="text" v-model="searchText">
+            </div>
+            <table class="table">
+                <thead>
+                    <tr >
+                        <th v-for="column in columns">
+                            {{column}}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="store in searchedStores">
+                        <td v-for="column in columns">
+                            {{store[column]}}
+                        </td>
+    
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="computed.js"></script>
+</body>
+</html>

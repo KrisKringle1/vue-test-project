@@ -26,6 +26,12 @@
             <h4 v-if="loading">
                 Loading...
             </h4>
+            <h4 v-if="submitting"> 
+                Submitting...
+            </h4>
+            <h4 v-if="validTodo">
+                Good to go!
+            </h4>
         </div>
         <ul>
             <li v-for="todo in todos">

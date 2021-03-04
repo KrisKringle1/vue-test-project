@@ -6,6 +6,7 @@ new Vue({
             loading: false,
             newTodo: '',
             submitting: false,
+            validTodo: false,
         }
     },
     methods: {
@@ -27,7 +28,17 @@ new Vue({
                 const data = response.data;
                 this.todos.push(data);
                 this.newTodo = ""
+                this.submitting = false;
             })
+        }
+    },
+    watch: {
+        newTodo: function(newValue){
+            if(newValue.length > 5){
+                this.validTodo = true
+            } else if(newValue.length <= 5){
+                this.validTodo = false;
+            }
         }
     }
 })

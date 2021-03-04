@@ -15,6 +15,17 @@
             <button @click="fetchNotes">
                 Fetch Todos
             </button>
+            <input
+            class="add-search-input"
+            type="text"
+            v-model="newTodo"
+            @keyup.enter="addTodo"
+            >
+        </div>
+        <div>
+            <h4 v-if="loading">
+                Loading...
+            </h4>
         </div>
         <ul>
             <li v-for="todo in todos">

@@ -10,21 +10,20 @@
 </head>
 <body>
     <div id="root">
-        <h4>v-model</h4>
-        <textarea name="example" id="example" cols="30" rows="10" v-model="message"></textarea>
+       <input 
+        type="text"
+        v-model="currentFruit"
+        v-on:keyup.enter="addFruit"
+        >
 
-        <p>
-            {{message}}
-        </p>
-        <div>
-            <h4>v-on</h4>
-
-            <button v-on:click="counter += 1">Add</button>
-            <button v-on:click="counter -= 1">Subtract</button>
-
-            <h4>{{counter}}</h4>
-      
-        </div>
+       <ul>
+           <li v-for="(fruit, index) in fruits" >
+               {{fruit}}
+               <button v-on:click="removeFruit(index)">
+                   Remove fruit
+               </button>
+           </li>
+       </ul>
 
     </div>
     <script src="app.js"></script>

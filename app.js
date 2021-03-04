@@ -1,6 +1,14 @@
 new Vue({
     el: '#root',
-    data: {
-        text: "hello world"
+    data() {
+        return{
+            ifBoolean: true,
+            showBoolean: false,
+            fruits: [
+                'apple',
+                'pears',
+                'oranges'
+            ]
+        }
     }
 });

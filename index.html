@@ -10,7 +10,37 @@
 </head>
 <body>
     <div id="root">
-        {{ text }}
+        <div>
+            <h4>v-if</h4>
+            
+            <div v-if="ifBoolean">
+                show inforemation if the boolean is true
+            </div>
+
+            <div v-else="ifBoolean">
+                this is where v - else data when the boolean is false 
+            </div>
+        </div>
+
+        <div>
+           <h4>v-show</h4> 
+
+           <div v-show="showBoolean">
+               show information if show boolean is true
+           </div>
+        </div>
+
+        <div>
+            <h4>v-for</h4>
+            <ul>
+                <li v-for="fruit in fruits">
+                    {{fruit}}
+                </li>
+            </ul>
+        </div>
+
+
+
     </div>
     <script src="app.js"></script>
 </body>
